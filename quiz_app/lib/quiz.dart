@@ -25,6 +25,11 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidget =
+        activeScreen == 'main-screen'
+            ? MainScreen(switchScreen)
+            : QuestionsScreen();
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -43,10 +48,7 @@ class _QuizState extends State<Quiz> {
           // When 'activeScreen' is set to 'questions-screen', the QuestionsScreen widget is displayed instead.
           // This dynamic switching of widgets enables the app to transition between different screens
           // based on user interaction, creating a seamless navigation experience.
-          child:
-              activeScreen == 'main-screen'
-                  ? MainScreen(switchScreen)
-                  : QuestionsScreen(),
+          child: screenWidget,
         ),
       ),
     );

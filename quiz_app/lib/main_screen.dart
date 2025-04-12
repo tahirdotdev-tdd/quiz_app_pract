@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-// MainScreen is a stateless widget that serves as the initial screen of the quiz app.
-// It displays a background color, an image, a title, and a button to start the quiz.
+/* MainScreen is a stateless widget that serves as the initial screen of the quiz app.
+ It displays a background color, an image, a title, and a button to start the quiz.*/
 
 class MainScreen extends StatelessWidget {
   // Constructor for MainScreen. It takes a callback function `startQuiz`

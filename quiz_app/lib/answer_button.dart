@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AnswerButton extends StatelessWidget {
   const AnswerButton({
@@ -6,19 +7,29 @@ class AnswerButton extends StatelessWidget {
     required this.answerText,
     required this.onTap,
   });
+
   final String answerText;
   final void Function() onTap;
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onTap,
       style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-        backgroundColor: Color.fromARGB(255, 33, 1, 95),
+        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+        backgroundColor: const Color.fromARGB(255, 33, 1, 95),
         foregroundColor: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       ),
-      child: Text("Answer 1 "),
+      child: Text(
+        answerText,
+        textAlign: TextAlign.center,
+        style: GoogleFonts.poppins(
+          fontSize: 16,
+          color: const Color.fromARGB(255, 255, 255, 255),
+          fontWeight: FontWeight.w400,
+        ),
+      ), // ✅ This shows the real answer!
     );
   }
 }
